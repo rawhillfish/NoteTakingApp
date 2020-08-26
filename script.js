@@ -11,7 +11,8 @@
 //create variable in JS for the listitems
 var listItems = document.getElementById("list");
 //create variable in JS for the add input box
-var input = document.getElementById("add-input");
+var input = document.getElementById("add-input").value;
+
 //create variable in JS for the button
 var submitbutton = document.getElementById("add-btn");
 
@@ -32,6 +33,7 @@ submitbutton.addEventListener("click", function () {
   event.preventDefault();
   console.log("clicked");
   listItems.appendChild(newListItem);
+  newListItem.textContent = input.nodeValue;
   //newListItem.innerHTML(input.nodeValue);
   console.log(input.nodeValue);
 });
