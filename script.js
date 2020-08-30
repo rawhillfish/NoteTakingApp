@@ -15,6 +15,9 @@ var input = document.getElementById("add-input");
 //create variable in JS for the button
 var submitbutton = document.getElementById("add-btn");
 
+function cleartext() {
+  input.value = "";
+}
 //var newListItem = document.createElement("li");
 //newListItem.setAttribute
 
@@ -53,30 +56,34 @@ submitbutton.addEventListener("click", function () {
     //create the second <i> in new list item
     icon2 = document.createElement("i"),
     //create the the input in new list item
-    input = document.createElement("input");
+    innerInput = document.createElement("input");
 
   //add class to input in new list item
-  input.className = "edit-note";
+  innerInput.className = "edit-note";
   //add attribute to input in new list item
-  input.setAttribute("type", "text");
+  innerInput.setAttribute("type", "text");
   //add class(css) to icon1 in new list item
   icon1.className = "fa fa-pencil-square-o";
   //add class(css) to icon2 in new list item
   icon2.className = "fa fa-times";
   //add input value first <p>
-  p1.textContent = input.value;
+  p1.innerHTML = input.value;
   // add the two icons to second <p> in html
   p2.appendChild(icon1);
   p2.appendChild(icon2);
   // add the two <p> and <input> into html of <li>
   li.appendChild(p1);
   li.appendChild(p2);
-  li.appendChild(input);
+  li.appendChild(innerInput);
   // console.log("clicked");
   //listItems.appendChild(newListItem);
   //newListItem.innerHTML(input.nodeValue);
   //console.log(input.nodeValue);
+
+  var list = document.getElementById("list");
   console.log(li);
+  list.appendChild(li);
+  cleartext();
 });
 
 //addEventListener(click);
